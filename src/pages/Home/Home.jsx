@@ -27,6 +27,9 @@ const Home = () => {
           </p>
         </div>
       </div>
+      <div className="more-cards">
+        
+      </div>
     </div>
   );
 };
