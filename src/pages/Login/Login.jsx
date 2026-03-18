@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import "./Login.css";
 import logo from "../../assets/logo.png";
+import { login, signup } from "../../firebase";
 
 const Login = () => {
   const [signState, setSignState] = useState("Sign In");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div className="login">
@@ -12,13 +16,38 @@ const Login = () => {
         <h1>{signState}</h1>
         <form>
           {signState === "Sign Up" ? (
-            <input type="text" placeholder="Your Name" />
+            <input
+              value={name}
+              OnChange={(e) => {
+                e.target.value;
+              }}
+              type="text"
+              placeholder="Your Name"
+            />
           ) : (
             <></>
           )}
 
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input
+            value={email}
+            onChange={(e) => {
+              {
+                (e.target, value);
+              }
+            }}
+            type="email"
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => {
+              {
+                (e.target, value);
+              }
+            }}
+            placeholder="Password"
+          />
           <button>{signState}</button>
           <div className="form-help">
             <div className="remember">
