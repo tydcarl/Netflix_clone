@@ -39,7 +39,7 @@ const signup = async (name, email, password)=>{
 
 }
 
-const login = async(email, passowrd)=> {
+const login = async(email, password)=> {
     try {
        await signInWithEmailAndPassword(auth, email, password) 
     } catch (error) {

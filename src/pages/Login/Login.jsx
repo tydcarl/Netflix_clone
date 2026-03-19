@@ -9,6 +9,15 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const user_auth = async (event) => {
+    event.preventDefault();
+    if (signState === "Sign In") {
+      await login(email, password);
+    } else {
+      await signup(name, email, password);
+    }
+  };
+
   return (
     <div className="login">
       <img src={logo} className="login-logo" alt="" />
@@ -18,8 +27,8 @@ const Login = () => {
           {signState === "Sign Up" ? (
             <input
               value={name}
-              OnChange={(e) => {
-                e.target.value;
+              onChange={(e) => {
+                setName(e.target.value);
               }}
               type="text"
               placeholder="Your Name"
@@ -31,9 +40,7 @@ const Login = () => {
           <input
             value={email}
             onChange={(e) => {
-              {
-                (e.target, value);
-              }
+              setEmail(e.target.value);
             }}
             type="email"
             placeholder="Email"
@@ -42,13 +49,13 @@ const Login = () => {
             type="password"
             value={password}
             onChange={(e) => {
-              {
-                (e.target, value);
-              }
+              setPassword(e.target.value);
             }}
             placeholder="Password"
           />
-          <button>{signState}</button>
+          <button onClick={user_auth} type="submit">
+            {signState}
+          </button>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" />
