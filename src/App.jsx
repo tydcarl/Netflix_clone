@@ -20,10 +20,10 @@ const App = () => {
         navigate("/login");
       }
     });
-  }, []);
+  }, [navigate]);
   return (
     <div>
-      <ToastContainer theme='dark' />
+      <ToastContainer theme="dark" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
